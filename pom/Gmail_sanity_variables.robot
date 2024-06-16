@@ -23,6 +23,18 @@ ${optionsTab}    //android.widget.ImageButton[@content-desc="Open navigation dra
 ${markRead}    com.google.android.gm:id/read
 ${backButton}    com.google.android.gm:id/action_mode_close_button
 
+${searchBar}    com.google.android.gm:id/open_search_bar_text_view
+${searchBarInputText}    //android.widget.TextView[@resource-id="com.google.android.gm:id/open_search_bar_text_view"]
+${emailTile}    //(//android.widget.TextView[@resource-id="com.google.android.gm:id/senders"])[1]
+
+#Compose
+${composeButton}    com.google.android.gm:id/compose_button
+${toField}    //android.view.ViewGroup[@resource-id="com.google.android.gm:id/peoplekit_autocomplete_chip_group"]/android.widget.EditText
+${subjectField}    com.google.android.gm:id/subject
+${emailBody}    //android.widget.EditText[@text="Compose email"]
+${sendButton}    com.google.android.gm:id/send
+${emailTileSubject1}    //(//android.widget.TextView[@resource-id="com.google.android.gm:id/subject"])[1]
+
 
 *** Keywords ***
 Long Press Element
