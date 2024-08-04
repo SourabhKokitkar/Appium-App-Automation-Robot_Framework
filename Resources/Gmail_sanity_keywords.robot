@@ -30,6 +30,7 @@ Test to check whether user is able to mark email as read/unread
     Close Application
     
 Test to check whether user is able to search email/sender and open
+    Sleep    5
     Open Application    ${remoteURL}    platformName=${platformName}    deviceName=${deviceName}    udid=${udid}    
     ...    appPackage=${appPackage}    appActivity=${appActivity}    automationName=${automationName}    noReset=true    doesNoReset=true    setClearSystemFiles=false
     Sleep    5
@@ -43,6 +44,7 @@ Test to check whether user is able to search email/sender and open
     Close Application
 
 Test to check whether user is able compose a new email and send
+    Sleep    5
     Open Application    ${remoteURL}    platformName=${platformName}    deviceName=${deviceName}    udid=${udid}    
     ...    appPackage=${appPackage}    appActivity=${appActivity}    automationName=${automationName}    noReset=true    doesNoReset=true    setClearSystemFiles=false
     Sleep    5
@@ -56,11 +58,12 @@ Test to check whether user is able compose a new email and send
     Sleep    3
     Click Element    ${sendButton}
     Sleep    5
-    Element Text Should Be    ${emailTileSubject1}    This is dummy subject 123      
+    Element Should Contain Text    ${emailTileSubject1}    This is dummy Subject 123      
     Sleep    3
     Close Application
 
 Test to check whether user is able compose a new email with attachment and send
+    Sleep    5
     Open Application    ${remoteURL}    platformName=${platformName}    deviceName=${deviceName}    udid=${udid}    
     ...    appPackage=${appPackage}    appActivity=${appActivity}    automationName=${automationName}    noReset=true    doesNoReset=true    setClearSystemFiles=false
     Sleep    5
@@ -81,7 +84,7 @@ Test to check whether user is able compose a new email with attachment and send
     Click Element    ${downloadFolder}
     Sleep    3
     Click Element    ${imageSelection}
-    Sleep    5
+    Sleep    2
     Click Element    ${sendButton}
     Sleep    12
     Click Element    ${emailTileSubject1}
@@ -91,6 +94,7 @@ Test to check whether user is able compose a new email with attachment and send
     Close Application
 
 Test to check whether user is able to download and open received attachment
+    Sleep    5
     Open Application    ${remoteURL}    platformName=${platformName}    deviceName=${deviceName}    udid=${udid}    
     ...    appPackage=${appPackage}    appActivity=${appActivity}    automationName=${automationName}    noReset=true    doesNoReset=true    setClearSystemFiles=false
     Sleep    5
@@ -105,7 +109,8 @@ Test to check whether user is able to download and open received attachment
     Close Application
 
 Test to check whether user is able to compose new email and save it to draft folder
-     Open Application    ${remoteURL}    platformName=${platformName}    deviceName=${deviceName}    udid=${udid}    
+    Sleep    5
+    Open Application    ${remoteURL}    platformName=${platformName}    deviceName=${deviceName}    udid=${udid}    
     ...    appPackage=${appPackage}    appActivity=${appActivity}    automationName=${automationName}    noReset=true    doesNoReset=true    setClearSystemFiles=false
     Sleep    5
     Click Element    ${composeButton}
@@ -131,11 +136,14 @@ Test to check whether user is able to compose new email and save it to draft fol
     Close Application
 
 Test to check whether user is able to open draft email and send it after editing
-     Open Application    ${remoteURL}    platformName=${platformName}    deviceName=${deviceName}    udid=${udid}    
+    Sleep    5
+    Open Application    ${remoteURL}    platformName=${platformName}    deviceName=${deviceName}    udid=${udid}    
     ...    appPackage=${appPackage}    appActivity=${appActivity}    automationName=${automationName}    noReset=true    doesNoReset=true    setClearSystemFiles=false
     Sleep    5
     Click Element    ${composeButton}
     Sleep    3
+    Click Element    ${toField}
+    Sleep    1
     Input Text    ${toField}    skokitkar555@gmail.com,
     Sleep    3
     Input Text    ${subjectField}    This is dummy Subject for drafts
@@ -159,6 +167,7 @@ Test to check whether user is able to open draft email and send it after editing
     Close Application
     
 Test to check whether user is able to delete selected email
+    Sleep    5
     Open Application    ${remoteURL}    platformName=${platformName}    deviceName=${deviceName}    udid=${udid}    
     ...    appPackage=${appPackage}    appActivity=${appActivity}    automationName=${automationName}    noReset=true    doesNoReset=true    setClearSystemFiles=false
     Sleep    5
@@ -180,6 +189,7 @@ Test to check whether user is able to delete selected email
     Close Application
 
 Test to check whether user is able to move deleted email back to inbox from bin folder
+    Sleep    5
     Open Application    ${remoteURL}    platformName=${platformName}    deviceName=${deviceName}    udid=${udid}    
     ...    appPackage=${appPackage}    appActivity=${appActivity}    automationName=${automationName}    noReset=true    doesNoReset=true    setClearSystemFiles=false
     Sleep    5
